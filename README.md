@@ -8,6 +8,7 @@ This repository contains a full-stack Task Management System developed as a tech
 * [Technology Stack](#technology-stack)
 * [Setup Instructions](#setup-instructions)
 * [Running the Applications](#running-the-applications)
+* [Getting Started with the Application](#getting-started-with-the-application)
 * [API Endpoints](#api-endpoints)
 
 ## Features
@@ -72,6 +73,33 @@ The system provides the following core functionalities:
     # OR yarn dev
     ```
     (SPA typically opens on `http://localhost:5173` that was what my local host ended up being).
+
+## Getting Started with the Application
+
+Follow these steps to quickly understand and interact with the core functionalities of the Task Management System:
+
+1.  **Access the Admin Account**:
+    * Your backend's `Program.cs` injects a default Admin user. Please refer to your `Program.cs` file to find the initial Admin credentials (e.g., `ash@ash.ash`, `ash!!`).
+    * Log in to the frontend application using these Admin credentials.
+
+2.  **Create a New Project (Admin Only)**:
+    * As an Admin user, navigate to the "Projects" section (or equivalent).
+    * Use the "New Project" or "Add Project" functionality to create your first project. Provide a name and optional description. Projects are essential as tasks must belong to a project.
+
+3.  **Explore User Roles**:
+    * You can now log out of the Admin account.
+    * **Register a new standard user account** via the frontend's registration page.
+    * **Log in as this standard user**.
+    * You will observe that standard users can **view existing projects** (if they are assigned or public) and **create tasks within those projects**, but they **cannot create new projects** themselves.
+
+4.  **Add and Manage Tasks**:
+    * Whether logged in as Admin or a Standard User (with access to a project), navigate to a project's detail page.
+    * Use the "Add Task" button (or similar) to create new tasks within this project.
+    * From the project detail page, you can view, edit, update the status, or delete tasks.
+
+5.  **Explore Admin Features (Optional)**:
+    * Log back in as the Admin user.
+    * Navigate to the "Admin Dashboard" section to view and manage other users' roles and statuses.
 
 ## API Endpoints
 
