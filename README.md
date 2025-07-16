@@ -6,12 +6,9 @@ This repository contains a full-stack Task Management System developed as a tech
 
 * [Features](#features)
 * [Technology Stack](#technology-stack)
-* [Repository Structure](#repository-structure)
 * [Setup Instructions](#setup-instructions)
 * [Running the Applications](#running-the-applications)
 * [API Endpoints](#api-endpoints)
-* [Bonus Features](#bonus-features)
-* [Code Quality & Best Practices](#code-quality--best-practices)
 
 ## Features
 
