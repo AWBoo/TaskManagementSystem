@@ -1,0 +1,229 @@
+/* frontend/src/pages/Css/ProjectTasksPage.css */
+
+.project-tasks-container {
+    padding: 30px;
+    max-width: 1200px; /* Limit content width for better readability */
+    margin: 30px auto; /* Centered, slightly more vertical margin */
+    /* background-color: #f9f9f9; -- Removed: Assuming body/global background is dark */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Darker shadow from reference */
+    color: #ecf0f1; /* General text color for the page */
+    background-color: #1a1e24; /* Added: A dark background for the container itself to match dark theme */
+}
+
+/* RENAMED: Page Title (matches component's className) */
+.project-tasks-page-title {
+    font-size: 2.5em;
+    color: #ecf0f1; /* Light text color for headings */
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #4a5568; /* Darker border from reference */
+    padding-bottom: 15px;
+    font-weight: 700; /* Added: Make title bolder */
+    letter-spacing: -0.02em; /* Added: Tighter letter-spacing for large titles */
+}
+
+/* NEW: Container for the "Add New Task" button */
+.task-actions-header {
+    display: flex; /* Use flexbox to align content */
+    justify-content: flex-end; /* Push button to the right */
+    margin-bottom: 30px; /* Space below the header actions */
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line */
+}
+
+
+/* General button styles (reused from other pages/components) */
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; /* Added box-shadow to transition */
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: 500; /* Made buttons slightly bolder */
+}
+
+.button:hover {
+    transform: translateY(-2px); /* Slightly more pronounced lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+
+/* Specific style for the Back to Projects button (if used on this page, currently not) */
+/* Assuming this button is outside the main project-tasks-container or at the top level */
+.back-to-projects-button {
+    background-color: #4a5568; /* Original */
+    color: #ecf0f1; /* Original */
+    margin-bottom: 20px; /* Original */
+    display: block; /* Original */
+    width: fit-content; /* Original */
+    margin-left: 0; /* Original */
+}
+
+.back-to-projects-button:hover {
+    background-color: #3d4655; /* Original */
+    transform: translateY(-1px); /* Original */
+}
+
+/* Removed .project-tasks-controls as .task-actions-header is now used for similar purpose */
+
+
+/* Primary button style - Used for "Add New Task" button on this page. */
+/* Changed to green as it signifies a positive 'Add' action */
+.primary-button {
+    background-color: #2ecc71; /* CHANGED: Green from original .add-new-task-button */
+    color: white;
+    font-weight: 600; /* Make it bolder for primary action */
+    padding: 12px 25px; /* Slightly larger for primary action */
+    border-radius: 8px; /* Slightly more rounded */
+}
+
+.primary-button:hover {
+    background-color: #27ae60; /* CHANGED: Darker green on hover */
+    transform: translateY(-2px); /* Consistent with other buttons */
+}
+
+/* Removed .add-new-task-button as .primary-button now serves its purpose */
+
+
+/* Filter and Sort Controls - kept as is, good styling */
+.filter-sort-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #2d3748;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    align-items: center;
+}
+
+.filter-sort-controls label {
+    font-weight: bold;
+    color: #cbd5e0;
+    margin-right: 5px;
+}
+
+.filter-sort-controls select,
+.filter-sort-controls input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #4a5568;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #ecf0f1;
+    background-color: #2d3748;
+    flex-grow: 1;
+    max-width: 250px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.filter-sort-controls input[type="text"]::placeholder {
+    color: #a0aec0;
+}
+
+.filter-sort-controls select:focus,
+.filter-sort-controls input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
+}
+
+
+/* Task List Sections (kept as is, these are good) */
+.task-list-section {
+    margin-top: 30px;
+}
+
+.task-list-section h2 {
+    font-size: 1.8em;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 10px;
+}
+
+.task-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+/* Styles for messages (e.g., loading, error, no tasks) */
+.project-tasks-message {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #2d3748;
+    border-radius: 8px;
+    color: #a0aec0;
+    font-size: 1.1em;
+    margin-top: 30px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    border: 1px solid #4a5568;
+}
+
+.project-tasks-message.error-message {
+    background-color: #3e2a2a;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+/* RENAMED: No Tasks Found message (matches component's className) */
+.project-tasks-message.no-tasks-found {
+    background-color: #2d3748;
+    color: #a0aec0;
+    border: 1px solid #4a5568;
+}
+
+.project-tasks-message p {
+    margin: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-tasks-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .project-tasks-page-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .task-actions-header { /* Adjusted for responsiveness */
+        justify-content: center;
+        flex-direction: column; /* Stack button on small screens */
+        gap: 15px; /* Gap between button and any other future controls */
+    }
+
+    .primary-button { /* Adjusted for responsiveness */
+        width: 100%;
+        text-align: center;
+    }
+
+    .filter-sort-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-sort-controls select,
+    .filter-sort-controls input[type="text"] {
+        max-width: 100%;
+    }
+
+    .task-list-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .back-to-projects-button {
+        width: 100%;
+        text-align: center;
+    }
+}

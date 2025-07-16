@@ -1,0 +1,157 @@
+/* frontend/src/pages/Css/Register.css */
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Dark, subtle gradient background */
+    padding: 1.5rem;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.register-card {
+    background-color: #2d3748; /* Darker background, consistent with MyTasksPage cards */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Stronger, diffused shadow */
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px; /* Increased max-width for a more substantial card */
+    text-align: center;
+    color: #ecf0f1; /* Light text color for contrast */
+    position: relative; /* For potential future animations or overlays */
+    overflow: hidden; /* Ensures inner elements respect border-radius */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+}
+
+.register-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(68, 80, 95, 0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.register-title {
+    font-size: 2.5em; /* Larger title */
+    font-weight: 700; /* Bolder */
+    margin-bottom: 1.8rem; /* More space below title */
+    color: #ecf0f1;
+    letter-spacing: 0.5px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Consistent spacing between form elements */
+}
+
+.register-form input {
+    width: 100%;
+    padding: 0.9rem 1.2rem; /* More generous padding */
+    border: 1px solid #4a5568; /* Subtle border color */
+    border-radius: 8px; /* Slightly more rounded inputs */
+    background-color: #3b4555; /* Slightly lighter input background than card */
+    color: #ecf0f1; /* Input text color */
+    font-size: 1.05em;
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form input::placeholder {
+    color: #a0aec0; /* Lighter placeholder text */
+}
+
+.register-form input:focus {
+    border-color: #4299e1; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3); /* Soft blue glow */
+}
+
+.register-form input:disabled {
+    background-color: #303846; /* Even darker when disabled */
+    color: #6d7b8d;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #e53e3e; /* Red error message */
+    font-size: 0.9em;
+    margin-top: -0.5rem; /* Pull up closer to the input */
+    text-align: left; /* Align error message to the left */
+    padding-left: 0.2rem;
+}
+
+.register-button {
+    width: 100%;
+    padding: 1rem; /* Generous padding for a larger button */
+    background-color: #4299e1; /* Vibrant blue */
+    color: white;
+    font-size: 1.15em; /* Larger font size */
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem; /* Space above button */
+}
+
+.register-button:hover {
+    background-color: #3182ce; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4); /* Glow effect */
+}
+
+.register-button:disabled {
+    background-color: #2b6cb0; /* Muted blue when disabled */
+    cursor: not-allowed;
+    transform: none; /* No lift effect when disabled */
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.login-text {
+    margin-top: 1.8rem; /* More space above login link */
+    font-size: 0.95em;
+    color: #a0aec0; /* Muted text color */
+}
+
+.login-link {
+    color: #4299e1; /* Blue link color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-link:hover {
+    color: #63b3ed; /* Lighter blue on hover */
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .register-card {
+        padding: 2rem 1.5rem; /* Adjust padding for smaller screens */
+        margin: 1rem; /* Ensure some margin on very small screens */
+    }
+
+    .register-title {
+        font-size: 2em;
+        margin-bottom: 1.5rem;
+    }
+
+    .register-form input,
+    .register-button {
+        padding: 0.8rem 1rem;
+        font-size: 1em;
+    }
+
+    .login-text {
+        margin-top: 1.5rem;
+    }
+}

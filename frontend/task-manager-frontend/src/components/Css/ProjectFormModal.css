@@ -1,0 +1,143 @@
+/* frontend/src/components/Css/ProjectFormModal.css */
+
+/* Reuse generic modal overlay/content styles from App.css or TaskFormModal.css for consistency.
+   If you had a shared ModalBase.css, these would ideally import from there.
+   For now, we will duplicate to ensure it works, but consider consolidating later. */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark, semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+  padding: 15px; /* Add some padding to prevent modal from touching screen edges */
+}
+
+.modal-content {
+  background-color: #1a202c; /* Matches App.css body background for consistency */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow for modals */
+  width: 90%;
+  max-width: 480px; /* Consistent max-width for forms */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 90vh; /* Enable vertical scrolling if content overflows */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #4a5568; /* Subtle border */
+  flex-shrink: 0; /* Prevent content from shrinking */
+}
+
+.modal-title {
+  font-size: 1.8em;
+  color: #ecf0f1;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Form container within the modal */
+.project-form { /* Specific class for project form, similar to .task-form */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #cbd5e0;
+  font-size: 1em;
+}
+
+/* Input, Textarea styles for the form */
+.form-group input[type="text"],
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2d3748; /* Matches App.css input background */
+  color: #ecf0f1;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Error styling for inputs */
+.input-error {
+  border-color: #e74c3c !important;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85em;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Modal Action Buttons Container */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Reusable button styles (from App.css or other component CSS) */
+.button { /* Ensure these base styles are available, perhaps globally or via mixin */
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+.primary-button { /* For save/submit buttons */
+  background-color: #3498db;
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #2980b9;
+}

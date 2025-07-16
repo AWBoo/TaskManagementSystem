@@ -1,0 +1,105 @@
+/* src/App.css - FINAL FIX for full screen width/height */
+
+/* Import Google Fonts - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- FIX: Ensure html, body, and #root take full viewport space --- */
+html, body, #root {
+  height: 100%; /* Make them take full viewport height */
+  width: 100%;  /* Make them take full viewport width */
+  margin: 0;    /* Remove default margins */
+  padding: 0;   /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal scrollbar if content overflows */
+}
+/* --- END FIX --- */
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a202c; /* Very dark background for the whole app */
+  color: #ecf0f1; /* Light text for general content */
+  line-height: 1.6;
+}
+
+/* Global App Container */
+.app-container {
+  min-height: 100vh; /* This should now correctly refer to the full viewport height */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure it takes full width */
+}
+
+/* Main Content Area */
+.app-main-content {
+  flex-grow: 1;
+  padding: 1.5rem; /* Consistent padding around main content */
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Basic styles for common elements (buttons, inputs) - adjusted for dark theme */
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #4a5568; /* Darker border for inputs */
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2d3748; /* Darker background for inputs */
+  color: #ecf0f1; /* Light text in inputs */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3498db; /* Blue accent on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4); /* Blue glow on focus */
+}
+
+/* Placeholder message styles (for 404, admin users page, etc.) */
+.placeholder-message {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.25rem;
+  color: #a0aec0; /* Lighter gray for messages */
+}
+
+/* Error message styles */
+.error-message {
+  color: #e74c3c; /* Red for errors */
+  font-weight: bold;
+}
+
+/* Basic font weight classes */
+.font-bold { font-weight: bold; }
+.italic { font-style: italic; }
+
+/* Responsive adjustments for main content */
+@media (max-width: 768px) {
+  .app-main-content {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+}

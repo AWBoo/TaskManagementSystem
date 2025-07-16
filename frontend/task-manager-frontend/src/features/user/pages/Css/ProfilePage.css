@@ -1,0 +1,247 @@
+/* --- Profile Page Container --- */
+.profile-page-container {
+    max-width: 800px; /* Slightly narrower than dashboard for focus */
+    width: 95%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #2c3e50; /* Dark background */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-family: 'Inter', sans-serif;
+    color: #ecf0f1; /* Light text */
+    box-sizing: border-box;
+}
+
+.profile-page-title {
+    text-align: center;
+    color: #3498db; /* Blue accent color */
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #34495e; /* Subtle separator */
+}
+
+/* --- Form Styling --- */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form groups */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Add some margin between form groups */
+}
+
+.form-group label {
+    font-size: 1em;
+    color: #bdc3c7; /* Lighter gray for labels */
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #4a667f; /* Border matches dashboard tables */
+    background-color: #34495e; /* Input background */
+    color: #ecf0f1; /* Input text color */
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="password"]::placeholder {
+    color: #95a5a6; /* Placeholder text color */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #3498db; /* Focus border color */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4); /* Focus shadow */
+}
+
+/* Styles for read-only fields (e.g., Status, Roles) */
+.form-group.read-only {
+    background-color: #34495e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #4a667f; /* Dashed border for read-only */
+}
+
+.form-group.read-only label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #3498db;
+}
+
+.form-group.read-only span {
+    color: #ecf0f1;
+    font-size: 1.1em;
+    display: block; /* Ensure it takes full width */
+}
+
+
+/* --- Form Messages (Success/Error) --- */
+.form-message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #2ecc7133; /* Light green background with transparency */
+    color: #2ecc71; /* Green text */
+    border: 1px solid #2ecc71;
+}
+
+.form-message.error {
+    background-color: #e74c3c33; /* Light red background with transparency */
+    color: #e74c3c; /* Red text */
+    border: 1px solid #e74c3c;
+}
+
+/* --- Buttons --- */
+.button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    flex-grow: 1; /* Allow buttons to grow */
+    text-align: center;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button.primary-button {
+    background-color: #3498db; /* Primary blue */
+}
+
+.button.primary-button:hover {
+    background-color: #2980b9;
+}
+
+.button.secondary-button {
+    background-color: #8e44ad; /* Secondary purple (like view tasks) */
+    margin-top: 10px; /* Space between primary and secondary */
+}
+
+.button.secondary-button:hover {
+    background-color: #6c3483;
+}
+
+/* --- Password Change Modal (from previous context, if you reuse it here) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #34495e; /* Matches chart/table cards */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 500px;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+.modal-title {
+    color: #3498db;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.modal-content .form-group { /* Specific form group for modal */
+    margin-bottom: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.modal-actions .button {
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+.modal-actions .cancel-button {
+    background-color: #7f8c8d; /* Gray for cancel */
+}
+
+.modal-actions .cancel-button:hover {
+    background-color: #616e70;
+}
+
+.modal-actions .confirm-button {
+    background-color: #2ecc71; /* Green for confirm */
+}
+
+.modal-actions .confirm-button:hover {
+    background-color: #27ae60;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .profile-page-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .profile-page-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-size: 1.5em;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

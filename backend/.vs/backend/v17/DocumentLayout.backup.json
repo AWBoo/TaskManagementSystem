@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\repositories\\userrolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\repositories\\userrolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\repositories\\taskitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\repositories\\taskitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\repositories\\rolerepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\repositories\\rolerepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\repositories\\projectrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\repositories\\projectrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\repositories\\auditentryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\repositories\\auditentryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\services\\userservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\services\\userservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\services\\tasksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\services\\tasksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\services\\projectsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\services\\projectsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|c:\\users\\asher\\documents\\code\\claervolker-task-manager\\backend\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45231B3-19BF-4A49-A66C-CE0C67390AA4}|backend\\backend.csproj|solutionrelative:backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "backend\\Program.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Program.cs",
+              "RelativeToolTip": "backend\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADEAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T12:28:42.182Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "backend\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "backend\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:05:55.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\TaskItemRepository.cs",
+              "RelativeDocumentMoniker": "backend\\Repositories\\TaskItemRepository.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\TaskItemRepository.cs",
+              "RelativeToolTip": "backend\\Repositories\\TaskItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:05:05.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\UserRoleRepository.cs",
+              "RelativeDocumentMoniker": "backend\\Repositories\\UserRoleRepository.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\UserRoleRepository.cs",
+              "RelativeToolTip": "backend\\Repositories\\UserRoleRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwA8AAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:02:54.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoleRepository .cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\RoleRepository .cs",
+              "RelativeDocumentMoniker": "backend\\Repositories\\RoleRepository .cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\RoleRepository .cs",
+              "RelativeToolTip": "backend\\Repositories\\RoleRepository .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:02:51.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjectRepository .cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\ProjectRepository .cs",
+              "RelativeDocumentMoniker": "backend\\Repositories\\ProjectRepository .cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\ProjectRepository .cs",
+              "RelativeToolTip": "backend\\Repositories\\ProjectRepository .cs",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:02:47.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuditEntryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\AuditEntryRepository.cs",
+              "RelativeDocumentMoniker": "backend\\Repositories\\AuditEntryRepository.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Repositories\\AuditEntryRepository.cs",
+              "RelativeToolTip": "backend\\Repositories\\AuditEntryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:02:44.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserService .cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\UserService .cs",
+              "RelativeDocumentMoniker": "backend\\Services\\UserService .cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\UserService .cs",
+              "RelativeToolTip": "backend\\Services\\UserService .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:01:41.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TasksService.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\TasksService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\TasksService.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\TasksService.cs",
+              "RelativeToolTip": "backend\\Services\\TasksService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T17:00:09.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProjectsService.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\ProjectsService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\ProjectsService.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\ProjectsService.cs",
+              "RelativeToolTip": "backend\\Services\\ProjectsService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:59:19.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\JwtService.cs",
+              "RelativeToolTip": "backend\\Services\\JwtService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:57:52.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\AuthService.cs",
+              "RelativeToolTip": "backend\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:57:20.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Services\\AdminService.cs",
+              "RelativeToolTip": "backend\\Services\\AdminService.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAAAAAFABAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:55:38.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "backend\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:51:33.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\TaskController.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "backend\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:51:07.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\ProjectController.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "backend\\Controllers\\ProjectController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:50:34.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "backend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:50:10.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Asher\\Documents\\CODE\\ClaerVolker-Task-Manager\\backend\\backend\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "backend\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAADwvxUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T16:40:38.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

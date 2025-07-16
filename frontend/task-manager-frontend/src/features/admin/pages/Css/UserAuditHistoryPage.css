@@ -1,0 +1,89 @@
+.user-audit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: calc(100vh - 60px); /* Adjust for header if you have one, or use 100vh */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Consistent dark gradient background */
+    color: #ecf0f1; /* Light text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.user-audit-title {
+    font-size: 2.2em; /* Slightly smaller than login title, but prominent */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ecf0f1;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.back-button {
+    background-color: #4299e1; /* Vibrant blue, consistent with login button */
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 2rem; /* Space below button */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+    background-color: #3182ce; /* Darker blue on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(66, 153, 225, 0.4);
+}
+
+.table-container {
+    width: 100%;
+    max-width: 1200px; /* Max width for readability on large screens */
+    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+    background-color: #2d3748; /* Darker background, consistent with cards */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+}
+
+.audit-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders for a clean look */
+    min-width: 800px; /* Ensure table doesn't get too narrow on small screens */
+}
+
+.audit-table th,
+.audit-table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #4a5568; /* Subtle separator lines */
+}
+
+.audit-table th {
+    background-color: #3b4555; /* Header background, slightly lighter than card */
+    font-weight: 600;
+    color: #cbd5e0; /* Slightly muted header text color */
+    position: sticky; /* Keep header visible on scroll */
+    top: 0;
+    z-index: 1;
+}
+
+.audit-table tbody tr:last-child td {
+    border-bottom: none; /* No border on the last row */
+}
+
+.audit-table tbody tr:hover {
+    background-color: #303846; /* Subtle hover effect on rows */
+}
+
+/* Specific styling for messages (loading, error, no data) */
+.loading-message,
+.error-message,
+.no-data-message {
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2

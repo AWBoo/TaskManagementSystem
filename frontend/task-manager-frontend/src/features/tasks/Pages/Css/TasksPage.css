@@ -1,0 +1,154 @@
+/* frontend/src/pages/Css/MyTasksPage.css */
+
+.tasks-page-container {
+  max-width: 1400px; /* Slightly wider container for the new layout */
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  color: #ecf0f1;
+}
+
+.tasks-page-title {
+  text-align: center;
+  color: #ecf0f1;
+  font-size: 2.8em;
+  margin-bottom: 2.5rem; /* More space below title to separate from new layout */
+  letter-spacing: 1px;
+}
+
+/* NEW: Two-Part Content Layout */
+.tasks-content-layout {
+  display: grid;
+  /* Define two columns: 40% for left, 60% for right. Using fr units for flexibility. */
+  grid-template-columns: 2fr 3fr; /* This roughly translates to 40%/60% */
+  gap: 2.5rem; /* Space between the two main panels */
+  align-items: start; /* Align panels to the top */
+}
+
+/* Left Panel: Controls Card (40%) */
+.tasks-control-panel {
+  background-color: #2d3748; /* Darker background, like our TaskCard */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Pronounced shadow for a card effect */
+  padding: 2rem; /* Generous padding inside the control card */
+  display: flex;
+  flex-direction: column; /* Stack controls vertically within this panel */
+  gap: 2rem; /* Space between Add Task button and sort/filter group */
+  align-items: center; /* Center items horizontally within the panel */
+}
+
+/* Add Task Button (specific styling for its prominence) */
+.add-task-button {
+  width: 100%; /* Make button fill its container */
+  padding: 15px 20px; /* Larger padding for prominence */
+  font-size: 1.1em;
+  min-width: unset; /* Remove min-width from previous .tasks-controls .button */
+}
+
+/* Sort and Filter Group - now directly inside tasks-control-panel */
+.sort-filter-group {
+  width: 100%; /* Make it take full width of the control panel */
+  display: flex;
+  flex-direction: column; /* Stack filter options vertically */
+  gap: 1.5rem; /* Space between each filter/sort control item */
+  align-items: stretch; /* Stretch items to fill width */
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column; /* Stack label above select/button */
+  gap: 8px; /* Space between label and input */
+}
+
+.control-item label {
+  font-weight: 500;
+  color: #a0aec0;
+  margin-bottom: 0; /* Reset margin if any from previous styles */
+}
+
+.control-item select,
+.button.secondary-button { /* Apply styles to both select and the order button */
+  width: 100%; /* Fill the width of control-item */
+  padding: 10px 12px; /* Adjusted padding for better fit */
+  font-size: 1em; /* Standard font size */
+  height: auto; /* Allow height to adjust naturally */
+  min-width: unset; /* Ensure no unwanted min-width */
+}
+
+/* Specific styles for the secondary button, overriding general select/button styles */
+.button.secondary-button {
+  background-color: #4a5568; /* Muted gray for secondary actions */
+  color: #ecf0f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex; /* Ensure content is centered if needed */
+  align-items: center;
+  justify-content: center;
+}
+
+.button.secondary-button:hover {
+  background-color: #616c80;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Right Panel: Tasks Display (60%) */
+.tasks-display-panel {
+  display: flex;
+  flex-direction: column; /* Stack messages/grid vertically */
+  gap: 25px; /* Space between task list and potential message */
+}
+
+/* Task List Grid - now positioned within the right panel */
+.task-list-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Still a single column for stacking effect */
+  gap: 25px; /* Vertical space between stacked cards */
+  max-width: 100%; /* Important: now takes full width of its parent (60% panel) */
+  margin: 0; /* Remove auto margin as parent handles centering */
+}
+
+.tasks-message {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2em;
+  color: #a0aec0;
+  background-color: #2d3748; /* Consistent background for messages */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 0; /* Reset margin if any from previous styles */
+}
+
+/* Responsive adjustments for the new layout */
+@media (max-width: 992px) { /* Adjust breakpoint for two-column layout to stack */
+  .tasks-content-layout {
+    grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+    gap: 2rem; /* Space between the stacked panels */
+  }
+
+  .tasks-control-panel {
+    order: 1; /* Keep controls at the top when stacked */
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .tasks-display-panel {
+    order: 2; /* Tasks below controls */
+  }
+
+  /* Adjust button/select widths for full width in stacked mode */
+  .add-task-button,
+  .control-item select,
+  .button.secondary-button {
+    width: 100%;
+  }
+
+  .tasks-page-title {
+    font-size: 2.2em;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks-page-container {
+    padding: 0 1rem; /* Further reduce padding on very small screens */
+  }
+}

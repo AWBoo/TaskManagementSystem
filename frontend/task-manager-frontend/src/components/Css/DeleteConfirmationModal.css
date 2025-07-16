@@ -1,0 +1,93 @@
+/* frontend/src/components/Css/DeleteConfirmationModal.css */
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker overlay for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #2d3748; /* Matches card/input background */
+  padding: 35px; /* Slightly more padding */
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow for modals */
+  width: 90%;
+  max-width: 550px; /* Consistent max-width for forms */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* More spacing inside */
+  border: 1px solid #4a5568; /* Subtle border */
+}
+
+.modal-title {
+  font-size: 2em; /* Larger title */
+  color: #ecf0f1; /* Light text */
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700; /* Bolder title */
+}
+
+.modal-content p {
+  font-size: 1.05em;
+  color: #a0aec0; /* Lighter gray */
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Modal Action Buttons Container */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Reusable button styles (ensure these match your App.css and MyTasksPage.css button styles) */
+/* Assuming these are globally available or consistent. If not, you might need to import them */
+.button {
+  padding: 12px 22px; /* Slightly larger buttons */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.05em; /* Slightly larger font */
+  font-weight: 600; /* Bolder font */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cancel-button {
+  background-color: #6c757d; /* Muted gray */
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+.confirm-delete-button {
+  background-color: #e74c3c; /* Match error red */
+  color: white;
+}
+
+.confirm-delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* Specific for warning text */
+.text-red-500 {
+  color: #e74c3c; /* Red for warnings */
+}
