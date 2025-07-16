@@ -34,8 +34,8 @@ The system provides the following core functionalities:
 
 ### Frontend
 * **Framework**: React with TypeScript
-* **State Management**: (Optional - *if used, specify here e.g., React Context API, Redux*)
-* **UI Library**: (Optional - *if used, specify here e.g., Tailwind CSS, Material-UI, custom styling*)
+* **State Management**: Redux
+* **UI Library**:  Custom Styling (Css)
 
 ## Setup Instructions
 
@@ -54,10 +54,11 @@ The system provides the following core functionalities:
 2.  **Backend Setup** (in `backend/backend`):
     * `dotnet restore`
     * Update `ConnectionStrings` in `appsettings.json` (and `appsettings.Development.json`).
-    * Apply migrations: `dotnet ef database update`[cite: 150].
+    * Configure CORS Policy: In Program.cs, locate the CORS policy definition (e.g., builder.Services.AddCors(...) and app.UseCors(...)). Ensure the WithOrigins method includes the URL where your frontend application         will run (e.g., http://localhost:5173).
+    * Apply migrations: `dotnet ef database update`.
 3.  **Frontend Setup** (in `frontend/task-manager-frontend`):
     * `npm install` (or `yarn install`)
-    * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7071`).
+    * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7071`)(there is a config file .envConfig. take this file copy it. rename and remove the COFNIG and then that the .env file ).
 
 ## Running the Applications
 
@@ -73,7 +74,7 @@ The system provides the following core functionalities:
     npm run dev
     # OR yarn dev
     ```
-    (SPA typically opens on `http://localhost:5173`).
+    (SPA typically opens on `http://localhost:5173` that was what my local host ended up being).
 
 ## API Endpoints
 
@@ -81,18 +82,5 @@ The API provides endpoints for Authentication, User Management (Admin), Projects
 
 * **Swagger UI**: `https://localhost:7071/swagger` (adjust port if different).
 
-**Key Endpoints Overview:**
 
-* **Authentication**: `POST /api/auth/register`, `POST /api/auth/login`
-* **User Management (Admin)**: `GET /api/admin/users`, `PUT /api/admin/users/{id}/role`, `PUT /api/admin/users/{id}/deactivate`
-* **Projects**: `GET /api/projects`, `POST /api/projects`, `GET /api/projects/{id}`, `PUT /api/projects/{id}`, `DELETE /api/projects/{id}`
-* **Tasks**: `GET /api/projects/{projectId}/tasks`, `POST /api/projects/{projectId}/tasks`, `PUT /api/tasks/{id}`, `DELETE /api/tasks/{id}`
 
-*(Example `curl` or Postman snippets can be added here if specifically requested, but Swagger provides better interaction and detail.)*
-
-## Bonus Features
-
-* **Dashboard Statistics**: Backend provides endpoints for aggregate data (e.g., task counts by status).
-* **Audit & History**: Timestamps for created/updated entities are recorded.
-
-## Code Quality & Best Practices
