@@ -51,15 +51,17 @@ The system provides the following core functionalities:
     ```
 2.  **Backend Setup** (in `backend/backend`):
     * `dotnet restore`
-    * Update `ConnectionStrings` in `appsettings.json` (and `appsettings.Development.json`)(Common issue was that Trusted_Connection=True wasn't included in the string)
-      (ie: Server=(localdb)\\mssqllocaldb;Database=YourPrefferedDBName;Trusted_Connection=True;MultipleActiveResultSets=true)While your there feel free to disable the logging other wise it's going to get very               cluttered.
-    * 
+    * Update `ConnectionStrings` in `appsettings.json` (and `appsettings.Development.json`)
+      (Common issue was that Trusted_Connection=True wasn't included in the string)
+      (ie: Server=(localdb)\\mssqllocaldb;Database=YourPrefferedDBName;Trusted_Connection=True;MultipleActiveResultSets=true)
+      While your there feel free to disable the logging other wise it's going to get very               cluttered.
+      
     * Configure CORS Policy: In Program.cs, locate the CORS policy definition (In Program.cs). Ensure the WithOrigins method includes the URL where your frontend application will run (e.g., http://localhost:5173).
-    * 
+      
     * Apply migrations: `dotnet ef database update`(If it doesn't exsit then it should create it ).
 3.  **Frontend Setup** (in `frontend/task-manager-frontend`):
     * `npm install` (or `yarn install`)
-    * 
+      
     * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7071`).
 
 ## Running the Applications
