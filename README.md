@@ -60,11 +60,11 @@ The system provides the following core functionalities:
       
     * Configure CORS Policy: In Program.cs, locate the CORS policy definition (In Program.cs). Ensure the WithOrigins method includes the URL where your frontend application will run (e.g., http://localhost:5173).
       
-    * Apply migrations: `dotnet ef database update`(If it doesn't exsit then it should create it ).
+    * Apply migrations: `dotnet ef database update`(You might have to create the migration and then run the update).
 3.  **Frontend Setup** (in `frontend/task-manager-frontend`):
     * `npm install` (or `yarn install`)
       
-    * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7071`).
+    * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7226`).
 
 ## Running the Applications
 NOTE: I prefer to run my frontend in VSCode and My Backend In Visual Studio
@@ -74,7 +74,7 @@ NOTE: I prefer to run my frontend in VSCode and My Backend In Visual Studio
     ```bash
     dotnet run
     ```
-    (API typically runs on `https://localhost:7153`).
+    (API typically runs on `https://localhost:7226`).
 2.  **Start Frontend SPA**:
     In `frontend/task-manager-frontend` directory:
     ```bash
