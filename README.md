@@ -84,7 +84,7 @@ NOTE: I prefer to run my frontend in VSCode and My Backend In Visual Studio
 Follow these steps to quickly understand and interact with the core functionalities of the Task Management System:
 
 1.  **Access the Admin Account**:
-    * Your backend's `Program.cs` injects a default Admin user. Please refer to your `Program.cs` file to find the initial Admin credentials (e.g., `ash@ash.ash`, `ash!!`).
+    * Your backend's `Program.cs` injects a default Admin user. Please refer to your `Program.cs` file to find the initial Admin credentials (e.g., `ash@ash.ash`, `ash!`).
     * Log in to the frontend application using these Admin credentials.
 
 2.  **Create a New Project (Admin Only)**:
