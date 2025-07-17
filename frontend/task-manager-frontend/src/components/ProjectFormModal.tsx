@@ -87,7 +87,7 @@ const ProjectFormModal: React.FC<ProjectFormModalProps> = ({
           </div>
 
           <div className="form-group">
-            <label htmlFor="projectDescription">Description (Optional):</label>
+            <label htmlFor="projectDescription">Description Required</label>
             <textarea
               id="projectDescription"
               name="description"

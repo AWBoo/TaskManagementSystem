@@ -176,7 +176,8 @@ namespace backend.Services
             {
                 Id = user.Id,
                 Email = user.Email,
-                Roles = userWithRoles.UserRoles?.Select(ur => ur.Role.Name).ToList() ?? new List<string> { "User" },
+                Roles = userWithRoles.UserRoles?.Select(ur => ur.Role.Name).ToList(),
+                Name = user.Name,
             };
 
             _logger.LogInformation("AuthService: Login SUCCESS - User '{Email}' logged in and token issued.", user.Email);

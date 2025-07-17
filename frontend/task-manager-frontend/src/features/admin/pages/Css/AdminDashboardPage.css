@@ -614,3 +614,131 @@
         font-size: 0.7em;
     }
 }
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+  padding: 1rem; /* Add some padding for smaller screens */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px; /* Max width for readability */
+  width: 100%;
+  text-align: center; /* Center text by default */
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 1.5rem; /* Or adjust to your preference */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Modal Message */
+.modal-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Specific styling for error messages within modals */
+.modal-message .text-red-500 {
+  color: #ef4444; /* Tailwind red-500 equivalent */
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Modal Actions (buttons container) */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 1rem; /* Space between buttons */
+  margin-top: 1rem; /* Space above buttons */
+}
+
+/* Base button styles for modals (reusing existing .button or .action-button if compatible) */
+.modal-actions .button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.modal-actions .cancel-button {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.modal-actions .cancel-button:hover {
+  background-color: #ccc;
+}
+
+.modal-actions .confirm-button {
+  background-color: #dc2626; /* A common red for destructive actions */
+  color: #fff;
+}
+
+.modal-actions .confirm-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Specific styles for role assignment buttons if different */
+.modal-actions .assign-button {
+  background-color: #2563eb; /* Blue for assign */
+  color: #fff;
+}
+.modal-actions .assign-button:hover {
+  background-color: #1d4ed8;
+}
+
+.modal-actions .remove-button {
+  background-color: #f59e0b; /* Orange for remove */
+  color: #fff;
+}
+.modal-actions .remove-button:hover {
+  background-color: #d97706;
+}
+
+/* Styles for select dropdown within modal */
+.select-role-dropdown {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Add styles for disabled buttons */
+.modal-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 600px) {
+  .modal-actions {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+  .modal-actions .button {
+    width: 100%; /* Full width buttons */
+  }
+}

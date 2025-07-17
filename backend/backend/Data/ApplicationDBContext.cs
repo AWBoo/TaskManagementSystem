@@ -56,7 +56,7 @@ namespace backend.Data
                 .WithOne(ur => ur.User)
                 .HasForeignKey(ur => ur.UserId)
                 .IsRequired()
-                .OnDelete(DeleteBehavior.NoAction); // Prevent deletion of User if UserRoles exist
+                .OnDelete(DeleteBehavior.Cascade); 
 
             // Role-UserRole relationship (One-to-Many)
             modelBuilder.Entity<Role>()

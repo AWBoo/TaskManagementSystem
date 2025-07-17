@@ -146,9 +146,14 @@ public class TasksController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTask(Guid id)
     {
-        var userId = GetUserId();
-        _logger.LogInformation("TasksController: Received request to delete task ID '{TaskId}' by user ID '{UserId}'.", id, userId);
-        var result = await _tasksService.DeleteTaskAsync(id, userId);
+        // Determine if the current user has the "Admin" role.
+        bool isAdmin = User.IsInRole("Admin");
+
+        var userId = GetUserId(); 
+
+        _logger.LogInformation("TasksController: Received request to delete task ID '{TaskId}' by user ID '{UserId}'. Is Admin: {IsAdmin}.", id, userId, isAdmin);
+
+        var result = await _tasksService.DeleteTaskAsync(id, userId, isAdmin);
 
         if (!result)
         {

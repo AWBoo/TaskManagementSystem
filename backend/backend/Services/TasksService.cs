@@ -2,6 +2,7 @@
 using backend.Interfaces;
 using backend.Models;
 using backend.Repositories.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace backend.Services
 {
@@ -190,14 +191,27 @@ namespace backend.Services
         }
 
         // Deletes a task, ensuring user ownership.
-        public async Task<bool> DeleteTaskAsync(Guid taskId, Guid userId)
+        public async Task<bool> DeleteTaskAsync(Guid taskId, Guid userId, bool isAdmin)
         {
-            _logger.LogInformation("Attempting to delete task ID '{TaskId}' by user ID '{UserId}'.", taskId, userId);
-            var task = await _taskItemRepository.GetTaskItemByIdAndUserIdAsync(taskId, userId);
+            _logger.LogInformation("Attempting to delete task ID '{TaskId}' by user ID '{UserId}'. IsAdmin: '{IsAdmin}'.", taskId, userId, isAdmin);
+
+            TaskItem task = null;
+
+
+            if (isAdmin)
+            {
+                // Admins can delete any task, so fetch by taskId only
+                task = await _taskItemRepository.GetTaskByIdAsync(taskId); // Assuming you have this method
+            }
+            else
+            {
+                // Regular users must own the task
+                task = await _taskItemRepository.GetTaskItemByIdAndUserIdAsync(taskId, userId);
+            }
 
             if (task == null)
             {
-                _logger.LogWarning("Delete task failed - Task ID '{TaskId}' not found or does not belong to user ID '{UserId}'.", taskId, userId);
+                _logger.LogWarning("Delete task failed - Task ID '{TaskId}' not found or (for non-admin) does not belong to user ID '{UserId}'.", taskId, userId);
                 return false;
             }
 

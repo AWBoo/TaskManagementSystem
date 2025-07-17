@@ -260,7 +260,7 @@ const TaskFormModal: React.FC<TaskFormModalProps> = ({
           {/* Assign To field - conditionally rendered based on isAdmin */}
           {isAdmin ? (
             <div className="form-group">
-              <label htmlFor="selectedUserId">Assign To (Optional):</label>
+              <label htmlFor="selectedUserId">Assign To: </label>
               <select
                 id="selectedUserId"
                 name="selectedUserId"
@@ -284,7 +284,7 @@ const TaskFormModal: React.FC<TaskFormModalProps> = ({
                 readOnly
                 disabled // This field is always disabled for non-admins as they cannot change assignment.
               />
-              {!taskToEdit && <p className="form-hint">New tasks you create will be assigned to you.</p>}
+              {!taskToEdit && <p className="form-hint">New tasks are by default assigned to you</p>}
             </div>
           )}
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import type { RootState, AppDispatch } from '../../../app/store';
@@ -23,7 +23,7 @@ import {
   PieChart, Pie, Cell,
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
-import './Css/AdminDashboardPage.css';
+import './Css/AdminDashboardPage.css'; // Your existing CSS import
 
 // Colors for the Recharts PieChart.
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF', '#FF19A6'];
@@ -49,6 +49,43 @@ const PC_CRASH_COLORS = [
   '#696969',
   '#ab1c1cff'
 ];
+
+// Reusable Modal Component (unstyled, designed to be styled by your CSS)
+interface ModalProps {
+  title: string;
+  message: React.ReactNode;
+  onConfirm?: () => void;
+  onCancel: () => void;
+  confirmText?: string;
+  cancelText?: string;
+  showConfirmButton?: boolean;
+}
+
+const Modal: React.FC<ModalProps> = ({
+  title,
+  message,
+  onConfirm,
+  onCancel,
+  confirmText = 'Confirm',
+  cancelText = 'Cancel',
+  showConfirmButton = true,
+}) => {
+  return (
+    <div className="modal-overlay"> 
+      <div className="modal-content"> 
+        <h3 className="modal-title">{title}</h3> 
+        <div className="modal-message">{message}</div> 
+        <div className="modal-actions"> 
+          <button onClick={onCancel} className="button cancel-button">{cancelText}</button> 
+          {showConfirmButton && (
+            <button onClick={onConfirm} className="button confirm-button">{confirmText}</button> 
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 const AdminDashboardPage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -81,8 +118,18 @@ const AdminDashboardPage: React.FC = () => {
   const [selectedRole, setSelectedRole] = useState('');
   const [roleActionType, setRoleActionType] = useState<'assign' | 'remove' | null>(null);
 
-  // Effect to fetch all necessary dashboard data on component mount.
-  useEffect(() => {
+  // State for general purpose alert/info modal
+  const [showAlertModal, setShowAlertModal] = useState(false);
+  const [alertMessage, setAlertMessage] = useState<React.ReactNode>('');
+  const [alertTitle, setAlertTitle] = useState('');
+
+  // State for status change confirmation modal
+  const [showStatusConfirmModal, setShowStatusConfirmModal] = useState(false);
+  const [statusChangeUser, setStatusChangeUser] = useState<{ userId: string; newStatus: string } | null>(null);
+
+
+  // Memoized callback to fetch all necessary dashboard data.
+  const fetchAllDashboardData = useCallback(() => {
     dispatch(fetchDashboardStats());
     dispatch(fetchTaskStatusCounts());
     dispatch(fetchUserTaskCounts());
@@ -91,6 +138,18 @@ const AdminDashboardPage: React.FC = () => {
     dispatch(fetchAllRoles());
     dispatch(fetchLatestAuditEntries(10)); // Fetch the last 10 audit entries.
   }, [dispatch]);
+
+  // Effect to fetch all necessary dashboard data on component mount.
+  useEffect(() => {
+    fetchAllDashboardData();
+  }, [fetchAllDashboardData]);
+
+  // Handler to show a custom alert modal
+  const showCustomAlert = (title: string, message: React.ReactNode) => {
+    setAlertTitle(title);
+    setAlertMessage(message);
+    setShowAlertModal(true);
+  };
 
   // Handler to open the delete confirmation modal for a specific user.
   const handleDeleteClick = (user: IUserBasic) => {
@@ -103,9 +162,10 @@ const AdminDashboardPage: React.FC = () => {
     if (userToDelete) {
       const resultAction = await dispatch(deleteUser(userToDelete.id));
       if (deleteUser.fulfilled.match(resultAction)) {
-        alert(`User ${userToDelete.email} deleted successfully.`);
+        showCustomAlert('Success', `User ${userToDelete.email} deleted successfully.`);
+        fetchAllDashboardData(); // Re-fetch all data to update user list
       } else {
-        alert(`Failed to delete user: ${resultAction.payload || 'Unknown error'}`);
+        showCustomAlert('Error', `Failed to delete user: ${resultAction.payload || 'Unknown error'}`);
       }
       setShowDeleteModal(false);
       setUserToDelete(null);
@@ -126,16 +186,18 @@ const AdminDashboardPage: React.FC = () => {
       if (roleActionType === 'assign') {
         resultAction = await dispatch(assignRoleToUser({ userId: userToManageRoles.id, roleName: selectedRole }));
         if (assignRoleToUser.fulfilled.match(resultAction)) {
-          alert(`Role '${selectedRole}' assigned to ${userToManageRoles.email}.`);
+          showCustomAlert('Success', `Role '${selectedRole}' assigned to ${userToManageRoles.email}.`);
+          fetchAllDashboardData(); // Re-fetch all data to update user list with new roles
         } else {
-          alert(`Failed to assign role: ${resultAction.payload || 'Unknown error'}`);
+          showCustomAlert('Error', `Failed to assign role: ${resultAction.payload || 'Unknown error'}`);
         }
       } else if (roleActionType === 'remove') {
         resultAction = await dispatch(removeRoleFromUser({ userId: userToManageRoles.id, roleName: selectedRole }));
         if (removeRoleFromUser.fulfilled.match(resultAction)) {
-          alert(`Role '${selectedRole}' removed from ${userToManageRoles.email}.`);
+          showCustomAlert('Success', `Role '${selectedRole}' removed from ${userToManageRoles.email}.`);
+          fetchAllDashboardData(); // Re-fetch all data to update user list with new roles
         } else {
-          alert(`Failed to remove role: ${resultAction.payload || 'Unknown error'}`);
+          showCustomAlert('Error', `Failed to remove role: ${resultAction.payload || 'Unknown error'}`);
         }
       }
       setShowRoleModal(false);
@@ -145,16 +207,25 @@ const AdminDashboardPage: React.FC = () => {
     }
   };
 
-  // Handles changing a user's status.
-  const handleStatusChange = async (userId: string, newStatus: string) => {
-    // Using window.confirm as a temporary placeholder for a custom modal.
-    if (window.confirm(`Are you sure you want to change status to '${newStatus}' for this user?`)) {
+  // Handler to initiate status change confirmation modal
+  const handleStatusChangeInitiate = (userId: string, newStatus: string) => {
+    setStatusChangeUser({ userId, newStatus });
+    setShowStatusConfirmModal(true);
+  };
+
+  // Handles changing a user's status after confirmation.
+  const confirmStatusChange = async () => {
+    if (statusChangeUser) {
+      const { userId, newStatus } = statusChangeUser;
       const resultAction = await dispatch(updateUserStatus({ userId, newStatus }));
       if (updateUserStatus.fulfilled.match(resultAction)) {
-        alert(`User status updated to '${newStatus}'.`);
+        showCustomAlert('Success', `User status updated to '${newStatus}'.`);
+        fetchAllDashboardData(); // Re-fetch all data to update user list with new status
       } else {
-        alert(`Failed to update status: ${resultAction.payload || 'Unknown error'}`);
+        showCustomAlert('Error', `Failed to update status: ${resultAction.payload || 'Unknown error'}`);
       }
+      setShowStatusConfirmModal(false);
+      setStatusChangeUser(null);
     }
   };
 
@@ -370,7 +441,7 @@ const AdminDashboardPage: React.FC = () => {
                       <select
                         className="status-dropdown"
                         value={user.status}
-                        onChange={(e) => handleStatusChange(user.id, e.target.value)}
+                        onChange={(e) => handleStatusChangeInitiate(user.id, e.target.value)}
                       >
                         {USER_STATUSES.map(status => (
                           <option key={status} value={status}>{status}</option>
@@ -442,30 +513,32 @@ const AdminDashboardPage: React.FC = () => {
 
       {/* Delete User Confirmation Modal */}
       {showDeleteModal && userToDelete && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h3 className="modal-title">Confirm Delete User</h3>
-            <p>Are you sure you want to delete user: <strong>{userToDelete.email}</strong>?</p>
-            <p className="text-red-500">This action cannot be undone and will delete all associated tasks assigned to this user.</p>
-            <div className="modal-actions">
-              <button className="button cancel-button" onClick={() => setShowDeleteModal(false)}>Cancel</button>
-              <button className="button confirm-delete-button" onClick={confirmDeleteUser}>Delete User</button>
-            </div>
-          </div>
-        </div>
+        <Modal
+          title="Confirm Delete User"
+          message={
+            <>
+              <p>Are you sure you want to delete user: <strong>{userToDelete.email}</strong>?</p>
+              <p className="text-red-500">This action cannot be undone and will delete all associated tasks assigned to this user.</p>
+            </>
+          }
+          onConfirm={confirmDeleteUser}
+          onCancel={() => { setShowDeleteModal(false); setUserToDelete(null); }}
+          confirmText="Delete User"
+        />
       )}
 
       {/* Manage Roles Modal */}
       {showRoleModal && userToManageRoles && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h3 className="modal-title">Manage Roles for {userToManageRoles.email}</h3>
-            <div className="form-group">
+        <Modal
+          title={`Manage Roles for ${userToManageRoles.email}`}
+          message={
+            <div className="form-group-modal"> {/* Add a class for modal-specific form groups if needed */}
               <label htmlFor="selectRole">Select Role:</label>
               <select
                 id="selectRole"
                 value={selectedRole}
                 onChange={(e) => setSelectedRole(e.target.value)}
+                className="select-role-dropdown" // Apply your dropdown styles here
               >
                 <option value="">-- Choose Role --</option>
                 {roles.map((role) => (
@@ -474,26 +547,50 @@ const AdminDashboardPage: React.FC = () => {
                   </option>
                 ))}
               </select>
+              <div className="modal-actions role-actions">
+                <button
+                  className="button assign-button"
+                  onClick={() => { setRoleActionType('assign'); handleRoleAction(); }}
+                  disabled={!selectedRole || userToManageRoles.roles.includes(selectedRole)}
+                >
+                  Assign Role
+                </button>
+                <button
+                  className="button remove-button"
+                  onClick={() => { setRoleActionType('remove'); handleRoleAction(); }}
+                  disabled={!selectedRole || !userToManageRoles.roles.includes(selectedRole)}
+                >
+                  Remove Role
+                </button>
+              </div>
             </div>
-            <div className="modal-actions role-actions">
-              <button
-                className="button assign-button"
-                onClick={() => { setRoleActionType('assign'); handleRoleAction(); }}
-                disabled={!selectedRole || userToManageRoles.roles.includes(selectedRole)}
-              >
-                Assign Role
-              </button>
-              <button
-                className="button remove-button"
-                onClick={() => { setRoleActionType('remove'); handleRoleAction(); }}
-                disabled={!selectedRole || !userToManageRoles.roles.includes(selectedRole)}
-              >
-                Remove Role
-              </button>
-              <button className="button cancel-button" onClick={() => setShowRoleModal(false)}>Cancel</button>
-            </div>
-          </div>
-        </div>
+          }
+          onCancel={() => { setShowRoleModal(false); setUserToManageRoles(null); setSelectedRole(''); setRoleActionType(null); }}
+          showConfirmButton={false} // No single confirm button for this modal
+          cancelText="Close"
+        />
+      )}
+
+      {/* Status Change Confirmation Modal */}
+      {showStatusConfirmModal && statusChangeUser && (
+        <Modal
+          title="Confirm Status Change"
+          message={`Are you sure you want to change the status to '${statusChangeUser.newStatus}' for this user?`}
+          onConfirm={confirmStatusChange}
+          onCancel={() => { setShowStatusConfirmModal(false); setStatusChangeUser(null); }}
+          confirmText="Change Status"
+        />
+      )}
+
+      {/* General Alert/Info Modal */}
+      {showAlertModal && (
+        <Modal
+          title={alertTitle}
+          message={alertMessage}
+          onCancel={() => setShowAlertModal(false)}
+          showConfirmButton={false}
+          cancelText="OK"
+        />
       )}
     </div>
   );

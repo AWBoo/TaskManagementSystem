@@ -12,7 +12,6 @@ const Header: React.FC = () => {
   const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
   // Selects the user's profile data, specifically for retrieving the user's ID.
   const myProfile = useSelector((state: RootState) => state.profile.profile);
-  console.log(myProfile); // Logs the profile data for debugging purposes.
 
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();

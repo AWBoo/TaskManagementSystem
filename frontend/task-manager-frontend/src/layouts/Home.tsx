@@ -16,9 +16,9 @@ import type { ITaskStatusCount } from '../features/user/store/DashboardIterface'
 const TASK_STATUS_COLOR_MAP: { [key: string]: string } = {
   'Not Started': '#63b3ed', // Blue
   'In Progress': '#f6e05e', // Yellow
-  'Completed': '#48bb78',   // Green
-  'On Hold': '#ed8936',     // Orange
-  'Blocked': '#e53e3e',     // Red
+  'Completed': '#48bb78',    // Green
+  'On Hold': '#ed8936',      // Orange
+  'Blocked': '#e53e3e',      // Red
 };
 
 // Home Functional Component: Displays a personalized dashboard for authenticated users.
@@ -83,7 +83,8 @@ const Home: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="home-title"
           >
-            Welcome back, {user?.email || 'Project Lead'}!
+            {/* Updated line to show user's name, then email, then 'Project Lead' */}
+            Welcome back, {user?.name || user?.email || 'Project Lead'}!
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}

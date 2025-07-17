@@ -16,7 +16,7 @@ namespace backend.Interfaces
         // Updates an existing task, with authorization checks.
         Task<TaskResponseDto?> UpdateTaskAsync(Guid taskId, Guid userId, string userRole, UpdateTaskRequest request);
         // Deletes a task, with ownership verification.
-        Task<bool> DeleteTaskAsync(Guid taskId, Guid userId);
+        Task<bool> DeleteTaskAsync(Guid taskId, Guid userId, bool isAdmin);
         // Retrieves tasks assigned to a specific user ID, with optional filters.
         Task<IEnumerable<TaskResponseDto>?> GetTasksByAssignedUserIdAsync(Guid userId, string? status, string? sortBy, string? sortOrder);
     }

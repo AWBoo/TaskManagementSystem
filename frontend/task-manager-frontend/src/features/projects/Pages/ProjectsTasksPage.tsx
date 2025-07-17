@@ -338,6 +338,7 @@ const ProjectTasksPage: React.FC = () => {
               onEdit={handleOpenEditTaskModal}
               onDelete={handleDeleteAttempt}
               onSelfAssign={handleSelfAssignTask}
+              canShowActions={isAdmin} 
             />
           ))}
         </div>

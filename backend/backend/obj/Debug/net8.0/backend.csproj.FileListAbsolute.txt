@@ -343,3 +343,4 @@ C:\Users\Asher\Documents\CODE\ClaerVolker-Task-Manager\backend\backend\obj\Debug
 C:\Users\Asher\Documents\CODE\ClaerVolker-Task-Manager\backend\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\Asher\Documents\CODE\ClaerVolker-Task-Manager\backend\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\Asher\Documents\CODE\ClaerVolker-Task-Manager\backend\backend\obj\Debug\net8.0\ref\backend.dll
+C:\Users\Asher\Documents\CODE\ClaerVolker-Task-Manager\backend\backend\obj\Debug\net8.0\backend.sourcelink.json

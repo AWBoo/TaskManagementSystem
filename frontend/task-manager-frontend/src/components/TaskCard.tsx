@@ -17,6 +17,11 @@ interface TaskCardProps {
 
   // Optional callback for when the card itself is clicked.
   onClick?: (taskId: string) => void;
+
+  // NEW OPTIONAL PROP: Directly control if edit/delete buttons are shown.
+  // If undefined, the component's internal logic (isAdmin || isAssignedToCurrentUser) applies.
+  // If explicitly true/false, it overrides the internal logic.
+  canShowActions?: boolean;
 }
 
 const TaskCard: React.FC<TaskCardProps> = ({
@@ -26,7 +31,8 @@ const TaskCard: React.FC<TaskCardProps> = ({
   onEdit,
   onDelete,
   onSelfAssign,
-  onClick
+  onClick,
+  canShowActions 
 }) => {
   // Returns a CSS class name based on the task's status for styling.
   const getStatusClassName = (status: TaskStatus) => {
@@ -43,19 +49,14 @@ const TaskCard: React.FC<TaskCardProps> = ({
   // Formats the due date for display, or shows 'No Due Date'.
   const formattedDueDate = task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'No Due Date';
 
-  // Determines if the 'Self Assign' button should be shown.
-  // It's visible if the user is not an admin, is logged in, the task is not already assigned to them,
-  // and the onSelfAssign callback is provided.
-  const showSelfAssignButton =
-    !isAdmin &&
-    currentUserId &&
-    task.userId !== currentUserId &&
-    onSelfAssign !== undefined;
-
   // Checks if the task is currently assigned to the logged-in user.
   const isAssignedToCurrentUser = currentUserId && task.userId === currentUserId;
-  // Determines if the user has permission to edit or delete the task
-  const canEditOrDelete = isAdmin || (currentUserId && task.userId === currentUserId);
+
+  // Determine if the user has permission to edit or delete the task based on internal logic
+  const internalCanEditOrDelete = isAdmin || isAssignedToCurrentUser;
+
+  const finalCanShowActions = typeof canShowActions === 'boolean' ? canShowActions : internalCanEditOrDelete;
+
 
   return (
     <div
@@ -90,8 +91,8 @@ const TaskCard: React.FC<TaskCardProps> = ({
           )}
         </small>
         <div className="task-card-actions">
-          {/* Render Edit/Delete buttons only if the user has permission. */}
-          {canEditOrDelete && (
+          {/* Render Edit/Delete buttons only if finalCanShowActions is true. */}
+          {finalCanShowActions && (
             <>
               <button
                 className="button action-button edit-button"
