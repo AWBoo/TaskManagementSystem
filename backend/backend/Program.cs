@@ -169,8 +169,8 @@ using (var scope = app.Services.CreateScope())
             var adminUser = new User
             {
                 Id = Guid.NewGuid(),
-                Email = "ash@ash.ash",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("ash!"),
+                Email = "Admin@Admin.ash",
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword("Admin!"),
                 Status = "Active" // Set default status for the seeded admin user.
             };
             context.Users.Add(adminUser);
