@@ -74,7 +74,7 @@ NOTE: I prefer to run my frontend in VSCode and My Backend In Visual Studio
     ```bash
     dotnet run
     ```
-    (API typically runs on `https://localhost:7071`).
+    (API typically runs on `https://localhost:7153`).
 2.  **Start Frontend SPA**:
     In `frontend/task-manager-frontend` directory:
     ```bash
