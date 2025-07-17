@@ -40,7 +40,7 @@ The system provides the following core functionalities:
 ### Prerequisites
 * .NET SDK 8.0+
 * Node.js LTS (with npm or Yarn)
-* SQL Server (or your chosen database)
+* SSMS
 * Git
 
 ### Steps
@@ -51,14 +51,19 @@ The system provides the following core functionalities:
     ```
 2.  **Backend Setup** (in `backend/backend`):
     * `dotnet restore`
-    * Update `ConnectionStrings` in `appsettings.json` (and `appsettings.Development.json`).
-    * Configure CORS Policy: In Program.cs, locate the CORS policy definition (e.g., builder.Services.AddCors(...) and app.UseCors(...)). Ensure the WithOrigins method includes the URL where your frontend application         will run (e.g., http://localhost:5173).
-    * Apply migrations: `dotnet ef database update`.
+    * Update `ConnectionStrings` in `appsettings.json` (and `appsettings.Development.json`)(Common issue was that Trusted_Connection=True wasn't included in the string)
+    * (ie: Server=(localdb)\\mssqllocaldb;Database=YourPrefferedDBName;Trusted_Connection=True;MultipleActiveResultSets=true).
+    * 
+    * Configure CORS Policy: In Program.cs, locate the CORS policy definition (In Program.cs). Ensure the WithOrigins method includes the URL where your frontend application will run (e.g., http://localhost:5173).
+    * 
+    * Apply migrations: `dotnet ef database update`(If it doesn't exsit then it should create it ).
 3.  **Frontend Setup** (in `frontend/task-manager-frontend`):
     * `npm install` (or `yarn install`)
-    * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7071`)(there is a config file .envConfig. take this file copy it. rename and remove the COFNIG and then that the .env file ).
+    * 
+    * Configure API base URL in `.env` (e.g., `VITE_API_BASE_URL=https://localhost:7071`).
 
 ## Running the Applications
+NOTE: I prefer to run my frontend in VSCode and My Backend In Visual Studio
 
 1.  **Start Backend API**:
     In `backend/backend` directory:
