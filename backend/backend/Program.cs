@@ -9,7 +9,7 @@ using backend.Interfaces;
 using backend.Services;
 using backend.Repositories;
 using backend.Repositories.Interfaces;
-using Microsoft.Extensions.Logging; // Add this using directive for ILogger
+using Microsoft.Extensions.Logging; 
 
 var builder = WebApplication.CreateBuilder(args);
 
