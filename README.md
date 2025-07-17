@@ -99,12 +99,12 @@ Follow these steps to quickly understand and interact with the core functionalit
     * You can now log out of the Admin account.
     * **Register a new standard user account** via the frontend's registration page.
     * **Log in as this standard user**.
-    * You will observe that standard users can **view existing projects** (if they are assigned or public) and **create tasks within those projects**, but they **cannot create new projects** themselves.
+    * You will observe that standard users can **view existing projects** and **create tasks within those projects**, but they **cannot create new projects** themselves.
 
 4.  **Add and Manage Tasks**:
-    * Whether logged in as Admin or a Standard User (with access to a project), navigate to a project's detail page.
-    * Use the "Add Task" button (or similar) to create new tasks within this project.
-    * From the project detail page, you can view, edit, update the status, or delete tasks.
+    * Whether logged in as Admin or a Standard User , navigate to a project's detail page to see task accosiated with the rpoject.
+    * Use the "Add Task" button on the to create new tasks within this project.
+    * From the project detail page, you can view, edit, update the status, or delete tasks (if admin).
 
 5.  **Explore Admin Features (Optional)**:
     * Log back in as the Admin user.
