@@ -53,8 +53,10 @@ The system provides the following core functionalities:
     * `dotnet restore`
     * Update `ConnectionStrings` in `appsettings.json` (and `appsettings.Development.json`)
       (Common issue was that Trusted_Connection=True wasn't included in the string)
+      
       (ie: Server=(localdb)\\mssqllocaldb;Database=YourPrefferedDBName;Trusted_Connection=True;MultipleActiveResultSets=true)
-      While your there feel free to disable the logging other wise it's going to get very               cluttered.
+      
+      While your there feel free to disable the logging other wise it's going to get very cluttered.
       
     * Configure CORS Policy: In Program.cs, locate the CORS policy definition (In Program.cs). Ensure the WithOrigins method includes the URL where your frontend application will run (e.g., http://localhost:5173).
       
